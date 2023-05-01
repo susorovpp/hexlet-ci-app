@@ -1,0 +1,15 @@
+name: build
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: setup
+        run: make setup
+      - name: linter
+        run: make lint
+      - name: test
+        run: make test
+
